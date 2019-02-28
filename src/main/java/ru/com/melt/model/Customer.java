@@ -1,9 +1,6 @@
 package ru.com.melt.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -21,12 +18,13 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NonNull
     private String username;
 
     @OneToMany(mappedBy = "customer")
     private Set<Comment> comments = new HashSet<>();
 
-    public Customer(String username) {
+    public Customer(@NonNull String username) {
         this.username = username;
     }
 }
