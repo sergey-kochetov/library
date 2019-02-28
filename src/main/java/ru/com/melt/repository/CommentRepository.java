@@ -11,8 +11,9 @@ import java.util.List;
 @Repository
 public interface CommentRepository extends CrudRepository<Comment, Long> {
 
-    @Query("SELECT c.commentText FROM Comment c WHERE c.book.id = :bookId")
-    List<String> findCommentsByBookId(@Param(value = "bookId") Long bookId);
+//    @Query("SELECT c.commentText FROM Comment c WHERE c.book.id = :bookId")
+//    List<String> findCommentsByBookId(@Param(value = "bookId") Long bookId);
+    List<Comment> findCommentsByBookId(Long bookId);
 
     List<Comment> findAllById(Long id);
 

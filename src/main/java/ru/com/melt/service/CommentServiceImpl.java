@@ -7,6 +7,7 @@ import ru.com.melt.model.Comment;
 import ru.com.melt.repository.CommentRepository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -21,7 +22,9 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public List<String> getAllComments(Long bookId) {
-        return commentRepository.findCommentsByBookId(bookId);
+        return commentRepository.findCommentsByBookId(bookId).stream()
+                .map(Comment::getCommentTexet)
+                .collect(Collectors.toList());
     }
 
     @Override
