@@ -10,12 +10,14 @@ import java.util.Set;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Table(name = "books")
+@ToString(exclude = "id")
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NonNull
     private String title;
 
     @OneToOne(fetch = FetchType.EAGER)

@@ -10,6 +10,7 @@ import java.util.Date;
 @Entity
 @EqualsAndHashCode(of = "id")
 @Table(name = "book_comments")
+@ToString(exclude = "id")
 public class Comment {
 
     @Id

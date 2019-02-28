@@ -1,8 +1,6 @@
 package ru.com.melt.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -13,6 +11,7 @@ import java.util.Set;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Table(name = "authors")
+@ToString(exclude = "id")
 public class Author {
 
     @Id
@@ -20,6 +19,7 @@ public class Author {
     private Long id;
 
     @Column(name = "author_name")
+    @NonNull
     private String name;
 
     @ManyToMany(mappedBy = "authors", cascade = CascadeType.PERSIST)

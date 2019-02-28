@@ -1,8 +1,6 @@
 package ru.com.melt.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,6 +9,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Table(name = "genres")
+@ToString(exclude = "id")
 public class Genre {
 
     @Id
@@ -18,6 +17,7 @@ public class Genre {
     private Long id;
 
     @Column(name = "genre_name")
+    @NonNull
     private String genreName;
 
     public Genre(String genreName) {

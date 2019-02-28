@@ -18,8 +18,8 @@ public interface BookRepository extends CrudRepository<Book, Long> {
 
     List<Book> findAll();
 
-    @Query("SELECT b FROM Book b JOIN b.authors a WHERE a.id = :id")
-    List<Book> findBooksByAuthorId(@Param(value = "id") Long authorId);
+    @Query("SELECT b FROM Book b JOIN b.authors a WHERE a.name = :name")
+    List<Book> findBooksByAuthorName(@Param(value = "name") String authorName);
 
     List<Book> findBooksByTitle(String title);
 

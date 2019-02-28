@@ -3,6 +3,7 @@ package ru.com.melt.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -13,6 +14,7 @@ import java.util.Set;
 @Entity
 @EqualsAndHashCode(of = "id")
 @Table(name = "customers")
+@ToString(exclude = "id")
 public class Customer {
 
     @Id

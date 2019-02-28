@@ -15,6 +15,8 @@ public interface AuthorRepository extends CrudRepository<Author, Long> {
     @Query("SELECT a.name FROM Author a")
     List<String> findAllAuthorsNames();
 
+    List<Author> findAll();
+
     Optional<Author> findAuthorByName(@NonNull String name);
 
     Optional<Author> findAuthorById(@NonNull Long id);

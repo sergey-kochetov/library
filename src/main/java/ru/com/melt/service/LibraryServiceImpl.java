@@ -38,7 +38,7 @@ public class LibraryServiceImpl implements LibraryService {
     public List<Book> getBooksByAuthorsName(String name) {
         Optional<Author> author = authorRepository.findAuthorByName(name);
         if (author.isPresent()) {
-            return bookRepository.findBooksByAuthorId(author.get().getId());
+            return bookRepository.findBooksByAuthorName(author.get().getName());
         } else {
             return Collections.emptyList();
         }
