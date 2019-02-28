@@ -23,7 +23,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<String> getAllComments(Long bookId) {
         return commentRepository.findCommentsByBookId(bookId).stream()
-                .map(Comment::getCommentTexet)
+                .map(Comment::getCommentText)
                 .collect(Collectors.toList());
     }
 

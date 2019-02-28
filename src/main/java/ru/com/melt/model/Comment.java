@@ -26,20 +26,20 @@ public class Comment {
     private Book book;
 
     @Column(name = "comment_text")
-    private String commentTexet;
+    private String commentText;
 
-    @Column(name = "comment_data")
+    @Column(name = "comment_date")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date commentData;
+    private Date commentDate;
 
     public Comment() {
-        this.commentData = new Date();
+        this.commentDate = new Date();
     }
 
-    public Comment(Customer customer, Book book, String commentTexet) {
+    public Comment(Customer customer, Book book, String commentText) {
         this.customer = customer;
         this.book = book;
-        this.commentTexet = commentTexet;
-        this.commentData = new Date();
+        this.commentText = commentText;
+        this.commentDate = new Date();
     }
 }

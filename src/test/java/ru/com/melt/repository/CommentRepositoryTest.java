@@ -49,7 +49,7 @@ public class CommentRepositoryTest {
         assertEquals(2, comments.size());
         assertEquals("comment text1, comment text2",
                 comments.stream()
-                        .map(Comment::getCommentTexet)
+                        .map(Comment::getCommentText)
                         .collect(Collectors.joining(", ")));
     }
 
@@ -70,7 +70,7 @@ public class CommentRepositoryTest {
         assertEquals(1, comments.size());
         assertEquals("comment text2",
                 comments.stream()
-                        .map(Comment::getCommentTexet)
+                        .map(Comment::getCommentText)
                         .collect(Collectors.joining(", ")));
     }
 

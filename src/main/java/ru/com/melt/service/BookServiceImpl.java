@@ -36,4 +36,10 @@ public class BookServiceImpl implements BookService {
         int result = bookRepository.deleteBookById(id);
         return result > 0;
     }
+
+    @Override
+    public Book updateBookTitleById(Long id, String title) {
+        int i = bookRepository.updateBookTitleById(id, title);
+        return bookRepository.findBookById(id).get();
+    }
 }

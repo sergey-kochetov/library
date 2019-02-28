@@ -33,4 +33,9 @@ public class Book {
     @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
     private Set<Comment> comments;
 
+    public Book(@NonNull String title, Genre genre, Set<Author> authors) {
+        this.title = title;
+        this.genre = genre;
+        this.authors = authors;
+    }
 }
