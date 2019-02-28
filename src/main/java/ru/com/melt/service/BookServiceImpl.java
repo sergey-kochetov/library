@@ -31,5 +31,9 @@ public class BookServiceImpl implements BookService {
                 .orElseThrow(RuntimeException::new);
     }
 
-
+    @Override
+    public boolean deleteBookById(Long id) {
+        int result = bookRepository.deleteBookById(id);
+        return result > 0;
+    }
 }

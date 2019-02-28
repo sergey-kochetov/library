@@ -41,4 +41,10 @@ public class GenreServiceImpl implements GenreService {
         genreRepository.save(genre);
         return true;
     }
+
+    @Override
+    public boolean deleteGenre(String genreName) {
+        int result = genreRepository.deleteGenreByGenreName(genreName);
+        return result > 0;
+    }
 }

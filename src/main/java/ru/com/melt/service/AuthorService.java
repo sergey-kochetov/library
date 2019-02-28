@@ -9,4 +9,6 @@ public interface AuthorService {
     List<String> getAllAuthorsNames();
 
     boolean addNewAuthor(Author author);
+
+    boolean deleteAuthorById(Long id);
 }

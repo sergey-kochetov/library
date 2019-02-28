@@ -28,4 +28,10 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> findAllById(Long id) {
         return commentRepository.findAllById(id);
     }
+
+    @Override
+    public boolean deleteCommentById(Long id) {
+        int result = commentRepository.deleteCommentById(id);
+        return result > 0;
+    }
 }

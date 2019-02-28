@@ -72,6 +72,15 @@ public class LibraryServiceImpl implements LibraryService {
         return true;
     }
 
+    @Override
+    public void deleteAll() {
+        genreRepository.deleteAll();
+        authorRepository.deleteAll();
+        bookRepository.deleteAll();
+        commentRepository.deleteAll();
+        customerRepository.deleteAll();
+    }
+
     private Genre getProvenGenre(@NonNull Book book) {
         return genreRepository
                     .findGenreByGenreName(book.getGenre().getGenreName())

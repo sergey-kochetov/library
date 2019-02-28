@@ -9,4 +9,6 @@ public interface CommentService {
     List<String> getAllComments(Long bookId);
 
     List<Comment> findAllById(Long id);
+
+    boolean deleteCommentById(Long id);
 }

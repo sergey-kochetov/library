@@ -9,4 +9,6 @@ public interface GenreService {
     List<String> getAllGenres();
 
     boolean addNewGenre(Genre genre);
+
+    boolean deleteGenre(String genreName);
 }

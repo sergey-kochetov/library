@@ -30,4 +30,10 @@ public class AuthorServiceImpl implements AuthorService {
         Author result = authorRepository.save(author);
         return result.getId() != null;
     }
+
+    @Override
+    public boolean deleteAuthorById(Long id) {
+        int result = authorRepository.deleteAuthorById(id);
+        return result > 0;
+    }
 }

@@ -12,4 +12,6 @@ public interface LibraryService {
     Book addNewBook(@NonNull Book book);
 
     boolean addComment(@NonNull Long bookId, @NonNull String username, @NonNull String comment);
+
+    void deleteAll();
 }
